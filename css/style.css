@@ -1,0 +1,192 @@
+/**color variables for my site**/
+:root {
+  --background-color: #fababa;
+  --font-family: "Lato", sans-serif;
+  --font-size: 16px;
+  --font-weight: 400;
+  --line-height: 1.6;
+  --color: #000000;
+  --white-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* non variable way
+  background-color: #fababa;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+*/
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  color: var(--color);
+}
+
+.page-headers {
+  display: flex;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.profile__portrait {
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile__portrait {
+  width: 250px;
+  margin-right: 40px;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+@media screen and (max-width: 500px) {
+  h1 {
+      font-size: 20px;
+  }
+}
+
+a {
+  color: #357b70;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr 3fr;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.grid_item {
+  background-color: lightgray;
+  margin: 20px;
+}
+/* this one is for my ultra wide monitor i use*/
+@media screen and (max-width: 1000px) {
+  .grid {
+      grid-template-columns: 3fr 3fr 3fr;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .grid {
+      grid-template-columns: 2fr 2fr;
+  }
+}
+@media screen and (max-width: 500px) {
+  .grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+a:visited {
+  /* Unvisited link */
+  color:var(--white-color);
+}
+a:hover {
+  /* No underlining when hovering over a link */
+  text-decoration: none;
+}
+
+a:active {
+  /* selected link */
+  color:var(--white-color);
+}
+/* Buttons on difarant pages*/
+button,
+.button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  background-color: #1b1919;
+  color:var(--white-color);
+  text-decoration: none;
+  /*adds spacing to the button (this will be discussed more in-depth later) */
+  padding: 10px;
+  border-radius: 50px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(8, 8, 8, 0.3);
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.5;
+}
+/* this bit adds the transition just to button one*/
+.button1:hover {
+  transition-duration: 0.2s;
+  transition-property: opacity;
+}
+
+.button__secondary {
+  background-color: #000000;
+  color: #dc2626;
+}
+input,
+texture,
+select,
+button {
+  font-family: system-ui;
+}
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.wheel {
+  animation-name: wheeljumper;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+}
+@keyframes wheeljumper {
+  0% {
+      fill: #edc655;
+  }
+  50% {
+      fill: #fcffad;
+  }
+  100% {
+      fill: #f76414;
+  }
+}
